@@ -21,14 +21,10 @@ public class HomePage extends BasePage {
     private WebElement blouses;
     @FindBy(css = ".quick-view")
     private WebElement quickView;
-    @FindBy(id = ".fancybox-type-iframe")
-    private WebElement categoryFrame;
-    @FindBy(css = ".product-image-container  img")
+    @FindBy(css = ".product-image-container img")
     private WebElement image;
     @FindBy(css = "#thumbs_list img")
     private List<WebElement> iconList;
-    @FindBy(css = "image-block")
-    private WebElement imageBlock;
     @FindBy(css = "#bigpic")
     private WebElement mainPicture;
 
