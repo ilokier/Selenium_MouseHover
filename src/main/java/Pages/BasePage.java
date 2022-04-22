@@ -15,7 +15,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
-import java.util.List;
 
 public class BasePage {
 
@@ -25,7 +24,6 @@ public class BasePage {
     public Actions actions;
     private EventFiringMouse eventFiringMouse;
     private WebListener webListener;
-
 
 
     public BasePage(WebDriver driver) {
@@ -42,17 +40,6 @@ public class BasePage {
         waitToBeVisible(element);
         highLightenerMethod(element);
         element.click();
-    }
-
-    public WebElement waitForElementToBeClickableBy(WebElement element) {
-        //WebDriverWait wait = new WebDriverWait(getDriver(), 10);
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
-
-
-    public String getElementText(WebElement element) {
-        highLightenerMethod(element);
-        return element.getText();
     }
 
     public void moveToElement(WebElement element) {
@@ -74,17 +61,9 @@ public class BasePage {
         waitToBeVisible(element);
     }
 
-    public void scrollToElementWithClick(WebElement element) {
-        actions.moveToElement(element);
-        actions.perform();
-        highLightenerMethod(element);
-        clickOnElement(element);
-    }
-
     public void waitToBeVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
-
 
     public void highLightenerMethod(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
